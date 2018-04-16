@@ -36,6 +36,7 @@ func main() {
 	}
 
 	outputImage, _ = ops.Transform(decoder, opts, outputImage)
+	os.Mkdir("thumbs", 0755)
 	os.Remove(outputFilename)
 	ioutil.WriteFile(outputFilename, outputImage, 0400)
 }
